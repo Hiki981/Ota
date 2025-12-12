@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - 太田 響</title>
+    <!-- Tailwind CSS CDNの読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome (アイコン) CDNの読み込み -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- フォント設定: Interを使用 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* カスタムスタイル */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* 明るい青みがかったグレー */
+            color: #1f2937; /* 濃いグレーのテキスト */
+        }
+        .header-shadow {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #2563eb; /* Tailwind blue-600 */
+            margin-top: 8px;
+            border-radius: 9999px;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.1), 0 4px 6px -2px rgba(37, 99, 235, 0.05);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- 1. ヘッダー -->
+    <header class="sticky top-0 z-50 bg-white header-shadow">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#" class="text-2xl font-extrabold text-gray-900 tracking-wider">
+                    My Portfolio
+                </a>
+                <!-- ナビゲーション (レスポンシブ対応: MDサイズ以上で表示) -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">自己紹介</a>
+                    <a href="#gakuchika" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">ガクチカ</a>
+                    <a href="#projects" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">プロジェクト</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-12 md:py-16">
+        
+        <!-- ヒーローセクション -->
+        <section id="hero" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+            <div class="text-center py-24 bg-white rounded-2xl shadow-xl border-t-4 border-blue-600">
+                <p class="text-xl text-blue-600 font-medium mb-4">Web Engineer & Designer</p>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 leading-tight mb-6">
+                    太田 響
+                </h1>
+                <p class="text-2xl text-gray-600 font-light mt-4">
+                    情報技術で社会の課題解決を目指す大学生
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. 自己紹介セクション -->
+        <section id="about" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <h2 class="section-title text-4xl font-bold mb-16">自己紹介 (About Me)</h2>
+            <div class="bg-white p-8 md:p-12 rounded-2xl shadow-lg border-l-4 border-gray-200">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                    
+                    <!-- プロフィール概要 -->
+                    <div class="md:col-span-1 border-r md:pr-8">
+                        <h3 class="text-3xl font-semibold text-gray-800 mb-4">プロフィール</h3>
+                        <dl class="space-y-3 text-lg">
+                            <div>
+                                <dt class="text-gray-500">名前 / Handle Name:</dt>
+                                <dd class="font-medium text-gray-900">太田 響</dd>
+                            </div>
+                            <div>
+                                <dt class="text-gray-500">所属:</dt>
+                                <dd class="font-medium text-gray-900">日本大学 理工学部 応用情報工学科</dd>
+                            </div>
+                            <div>
+                                <dt class="text-gray-500">興味 / Focus:</dt>
+                                <dd class="font-medium text-blue-600">フロントエンド開発, UI/UX設計</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <!-- スキル概要 -->
+                    <div class="md:col-span-2">
+                        <h3 class="text-3xl font-semibold text-gray-800 mb-6">技術スタック</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-4 py-2 rounded-full"><i class="fab fa-html5 mr-2"></i>HTML5 / CSS3</span>
+                            <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-4 py-2 rounded-full"><i class="fab fa-js-square mr-2"></i>JavaScript</span>
+                            <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-4 py-2 rounded-full"><i class="fas fa-magic mr-2"></i>Tailwind CSS</span>
+                            <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-4 py-2 rounded-full"><i class="fas fa-pen-nib mr-2"></i>Figma (UI/UX)</span>
+                        </div>
+                        <p class="mt-6 text-gray-700 leading-relaxed">
+                            大学での専門知識を活かし、ユーザー体験を重視したウェブサイト・アプリケーション開発に取り組んでいます。特に、デザインと実装の両面から最適なソリューションを提供することに情熱を持っています。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 学生時代に力を入れたこと（ガクチカ）セクション -->
+        <section id="gakuchika" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-white rounded-2xl shadow-lg mt-12">
+            <h2 class="section-title text-4xl font-bold mb-16">学生時代に力を入れたこと (Gakuchika)</h2>
+            <div class="md:grid md:grid-cols-12 md:gap-10">
+                
+                <!-- サマリー -->
+                <div class="md:col-span-4 mb-8 md:mb-0">
+                    <div class="p-6 bg-blue-50 rounded-lg border-l-4 border-blue-600">
+                        <h3 class="text-2xl font-bold text-blue-800 mb-3">要約</h3>
+                        <p class="text-gray-700">
+                            人数がギリギリだったサッカー部にて、練習環境の課題特定と改善を行い、部員定着率の向上を実現しました。
+                        </p>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <i class="fas fa-futbol text-6xl text-blue-400"></i>
+                    </div>
+                </div>
+
+                <!-- 詳細な行動と成果 -->
+                <div class="md:col-span-8 space-y-6">
+                    <!-- 課題 (Situation / Task) -->
+                    <div class="p-4 bg-gray-50 rounded-lg shadow-sm">
+                        <p class="text-xl font-semibold text-gray-800 mb-2 flex items-center"><i class="fas fa-exclamation-triangle mr-3 text-red-500"></i>課題特定</p>
+                        <p class="text-gray-700 leading-relaxed border-l-4 border-red-300 pl-3">
+                            私は人数がギリギリだったサッカー部で、部員定着率の向上に取り組みました。練習場所がテニスコートのみであり、専用グラウンドがない環境の悪さから、初心者の定着が課題でした。
+                        </p>
+                    </div>
+                    <!-- 行動 (Action) -->
+                    <div class="p-4 bg-gray-50 rounded-lg shadow-sm">
+                        <p class="text-xl font-semibold text-gray-800 mb-2 flex items-center"><i class="fas fa-lightbulb mr-3 text-yellow-500"></i>行動と戦略</p>
+                        <p class="text-gray-700 leading-relaxed border-l-4 border-yellow-300 pl-3">
+                            私は「練習環境が部の人気を左右する」と考え、顧問に対し、人工芝のサッカーグラウンドの積極的な予約をデータとともに説得しました。
+                        </p>
+                    </div>
+                    <!-- 成果と獲得能力 (Result) -->
+                    <div class="p-4 bg-gray-50 rounded-lg shadow-sm">
+                        <p class="text-xl font-semibold text-gray-800 mb-2 flex items-center"><i class="fas fa-trophy mr-3 text-green-500"></i>成果と学び</p>
+                        <p class="text-gray-700 leading-relaxed border-l-4 border-green-300 pl-3">
+                            その結果、休日や夏休み中に月に数回、人工芝での質の高い練習を実現し、初心者の定着を図りました。この経験から、**目標達成のための課題特定力**と、**周囲を巻き込む行動力**を培いました。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ダミープロジェクトセクション -->
+        <section id="projects" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <h2 class="section-title text-4xl font-bold mb-16">プロジェクト (Projects)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- プロジェクトカード1 (ダミー) - 画像代わりにアイコンとカラーボックスを使用 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 card">
+                    <div class="flex items-center justify-center w-full h-48 bg-blue-600 text-white">
+                        <i class="fas fa-laptop-code text-6xl opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">大学ゼミWebサイト制作</h3>
+                        <p class="text-gray-600 mb-4 text-sm">ゼミの紹介と研究成果を掲載するためのレスポンシブなWebサイトをReactで実装。デザインからデプロイまで担当。</p>
+                        <div class="text-blue-600 font-medium text-sm flex items-center">
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                            詳細を見る
+                        </div>
+                    </div>
+                </div>
+
+                <!-- プロジェクトカード2 (ダミー) -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 card">
+                    <div class="flex items-center justify-center w-full h-48 bg-gray-800 text-white">
+                        <i class="fas fa-mobile-alt text-6xl opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">ToDo管理アプリ UI/UX改善</h3>
+                        <p class="text-gray-600 mb-4 text-sm">既存のToDoアプリのユーザビリティ調査を行い、Figmaでデザインプロトタイプを作成・改善。</p>
+                        <div class="text-blue-600 font-medium text-sm flex items-center">
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                            詳細を見る
+                        </div>
+                    </div>
+                </div>
+
+                <!-- プロジェクトカード3 (ダミー) -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 card">
+                    <div class="flex items-center justify-center w-full h-48 bg-teal-600 text-white">
+                        <i class="fas fa-chart-line text-6xl opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-3">データ可視化ツール開発</h3>
+                        <p class="text-gray-600 mb-4 text-sm">Pythonで収集したデータをD3.jsを用いてウェブ上でインタラクティブに可視化するツールの開発。</p>
+                        <div class="text-blue-600 font-medium text-sm flex items-center">
+                            <i class="fas fa-external-link-alt mr-2"></i>
+                            詳細を見る
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 4. フッター -->
+    <footer class="bg-gray-900 text-white py-6 mt-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm font-light">
+                <i class="far fa-copyright mr-1"></i>
+                Copyright 2024 太田 響. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
