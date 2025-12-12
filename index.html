@@ -14,7 +14,10 @@
         /* カスタムスタイル */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8; /* 明るい青みがかったグレー */
+            /* 背景変更: 視認性を高めたドットグリッドパターン */
+            background-color: #e0f2fe; /* 背景色をより明確な薄い青に変更 */
+            background-image: radial-gradient(#64748b 2px, transparent 2px); /* ドットを濃く、サイズを大きく */
+            background-size: 24px 24px; /* ドットの間隔を調整 */
             color: #1f2937; /* 濃いグレーのテキスト */
         }
         .header-shadow {
@@ -31,17 +34,24 @@
         }
         .card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.9); /* カードを少しだけ透過 */
+            backdrop-filter: blur(5px);
         }
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.1), 0 4px 6px -2px rgba(37, 99, 235, 0.05);
+        }
+        /* ヒーローセクション等の白背景も少し透過させて背景パターンを馴染ませる */
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.85); /* 透過度を上げて背景を見やすく */
+            backdrop-filter: blur(8px);
         }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- 1. ヘッダー -->
-    <header class="sticky top-0 z-50 bg-white header-shadow">
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md header-shadow">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <a href="#" class="text-2xl font-extrabold text-gray-900 tracking-wider">
@@ -61,7 +71,7 @@
         
         <!-- ヒーローセクション -->
         <section id="hero" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
-            <div class="text-center py-24 bg-white rounded-2xl shadow-xl border-t-4 border-blue-600">
+            <div class="text-center py-24 glass-panel rounded-2xl shadow-xl border-t-4 border-blue-600">
                 <p class="text-xl text-blue-600 font-medium mb-4">Web Engineer & Designer</p>
                 <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 leading-tight mb-6">
                     太田 響
@@ -75,7 +85,7 @@
         <!-- 2. 自己紹介セクション -->
         <section id="about" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <h2 class="section-title text-4xl font-bold mb-16">自己紹介 (About Me)</h2>
-            <div class="bg-white p-8 md:p-12 rounded-2xl shadow-lg border-l-4 border-gray-200">
+            <div class="glass-panel p-8 md:p-12 rounded-2xl shadow-lg border-l-4 border-gray-200">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                     
                     <!-- プロフィール概要 -->
@@ -115,13 +125,13 @@
         </section>
 
         <!-- 3. 学生時代に力を入れたこと（ガクチカ）セクション -->
-        <section id="gakuchika" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-white rounded-2xl shadow-lg mt-12">
+        <section id="gakuchika" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg mt-12">
             <h2 class="section-title text-4xl font-bold mb-16">学生時代に力を入れたこと (Gakuchika)</h2>
             <div class="md:grid md:grid-cols-12 md:gap-10">
                 
                 <!-- サマリー -->
                 <div class="md:col-span-4 mb-8 md:mb-0">
-                    <div class="p-6 bg-blue-50 rounded-lg border-l-4 border-blue-600">
+                    <div class="p-6 bg-blue-50/80 rounded-lg border-l-4 border-blue-600">
                         <h3 class="text-2xl font-bold text-blue-800 mb-3">要約</h3>
                         <p class="text-gray-700">
                             人数がギリギリだったサッカー部にて、練習環境の課題特定と改善を行い、部員定着率の向上を実現しました。
@@ -135,21 +145,21 @@
                 <!-- 詳細な行動と成果 -->
                 <div class="md:col-span-8 space-y-6">
                     <!-- 課題 (Situation / Task) -->
-                    <div class="p-4 bg-gray-50 rounded-lg shadow-sm">
+                    <div class="p-4 bg-gray-50/80 rounded-lg shadow-sm">
                         <p class="text-xl font-semibold text-gray-800 mb-2 flex items-center"><i class="fas fa-exclamation-triangle mr-3 text-red-500"></i>課題特定</p>
                         <p class="text-gray-700 leading-relaxed border-l-4 border-red-300 pl-3">
                             私は人数がギリギリだったサッカー部で、部員定着率の向上に取り組みました。練習場所がテニスコートのみであり、専用グラウンドがない環境の悪さから、初心者の定着が課題でした。
                         </p>
                     </div>
                     <!-- 行動 (Action) -->
-                    <div class="p-4 bg-gray-50 rounded-lg shadow-sm">
+                    <div class="p-4 bg-gray-50/80 rounded-lg shadow-sm">
                         <p class="text-xl font-semibold text-gray-800 mb-2 flex items-center"><i class="fas fa-lightbulb mr-3 text-yellow-500"></i>行動と戦略</p>
                         <p class="text-gray-700 leading-relaxed border-l-4 border-yellow-300 pl-3">
                             私は「練習環境が部の人気を左右する」と考え、顧問に対し、人工芝のサッカーグラウンドの積極的な予約をデータとともに説得しました。
                         </p>
                     </div>
                     <!-- 成果と獲得能力 (Result) -->
-                    <div class="p-4 bg-gray-50 rounded-lg shadow-sm">
+                    <div class="p-4 bg-gray-50/80 rounded-lg shadow-sm">
                         <p class="text-xl font-semibold text-gray-800 mb-2 flex items-center"><i class="fas fa-trophy mr-3 text-green-500"></i>成果と学び</p>
                         <p class="text-gray-700 leading-relaxed border-l-4 border-green-300 pl-3">
                             その結果、休日や夏休み中に月に数回、人工芝での質の高い練習を実現し、初心者の定着を図りました。この経験から、**目標達成のための課題特定力**と、**周囲を巻き込む行動力**を培いました。
@@ -165,7 +175,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- プロジェクトカード1 (ダミー) - 画像代わりにアイコンとカラーボックスを使用 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 card">
+                <div class="card rounded-xl shadow-lg overflow-hidden border border-gray-100">
                     <div class="flex items-center justify-center w-full h-48 bg-blue-600 text-white">
                         <i class="fas fa-laptop-code text-6xl opacity-80"></i>
                     </div>
@@ -180,7 +190,7 @@
                 </div>
 
                 <!-- プロジェクトカード2 (ダミー) -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 card">
+                <div class="card rounded-xl shadow-lg overflow-hidden border border-gray-100">
                     <div class="flex items-center justify-center w-full h-48 bg-gray-800 text-white">
                         <i class="fas fa-mobile-alt text-6xl opacity-80"></i>
                     </div>
@@ -195,7 +205,7 @@
                 </div>
 
                 <!-- プロジェクトカード3 (ダミー) -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 card">
+                <div class="card rounded-xl shadow-lg overflow-hidden border border-gray-100">
                     <div class="flex items-center justify-center w-full h-48 bg-teal-600 text-white">
                         <i class="fas fa-chart-line text-6xl opacity-80"></i>
                     </div>
